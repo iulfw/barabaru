@@ -1,0 +1,83 @@
+@media (max-width: 480px) {
+
+    * {
+        scroll-padding-top: 280px;
+    }
+
+
+    /* Header */
+
+    header {
+        height: 40vh;
+    }
+
+    .header-title {
+        text-align: center;
+    }
+
+    .header-title a {
+        font-size: 72px;
+        line-height: 0.8;
+    }
+
+
+    /* Partner */
+
+    .partner {
+        padding: 3rem;
+    }
+
+    .partner p {
+        font-size: 16px;
+        margin-right: -5px;
+        margin-bottom: 14px;
+    }
+
+    .partner-logo {
+        text-align: center;
+    }
+
+    .partner-logo img {
+        width: 300px;
+    }
+
+
+    /* Menu */
+
+    .menu {
+        padding: 1rem 3rem;
+        top: 153px;
+    }
+
+    .menu-row {
+        display: none;
+    }
+
+    .menu-dd {
+        display: inline-block;
+    }
+
+
+    /* Menu Cards */
+
+    .cards {
+        padding: 3rem;
+    }
+
+    .card {
+        display: grid;
+    }
+
+    .card-title {
+        display: none;
+    }
+
+    .card-m {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-img {
+        height: 155px;
+    }
+}

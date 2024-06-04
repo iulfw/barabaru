@@ -1,0 +1,508 @@
+/* Header */
+
+header {
+    display: flex;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(253,253,253,1) 10%, rgba(253,253,253,0.6) 50%, rgba(253,253,253,0.2) 70%, rgba(253,253,253,0) 100%), url("../assets/header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.header-title a {
+    font-size: 90px;
+    color: #3068e1;
+}
+
+
+/* Intro */
+  
+.intro {
+    display: flex;
+    padding: 2% 10% 2%;
+    text-align: center;
+    background: #fdfdfd;
+    gap: 70px;
+}
+
+.intro .card {
+    width: 100%;
+    box-shadow: none;
+}
+
+.intro .card h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.intro .card p {
+    font-size: 20px;
+}
+
+.intro .vl {
+    border-left: 1.5px solid #b9b9b9;
+    height: 180px;
+    left: 50%;
+}
+
+
+/* Timeline */
+
+.timeline {
+    display: grid;
+    padding: 5% 10% 2%;
+    background: #fdfdfd;
+}
+
+.tl-title {
+    font-size: 54px;
+    color: #3068e1;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.tl-line {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+}
+  
+.date {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3068e1;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+  
+.line {
+    position: absolute;
+    height: 2px;
+    background: #B9B9B9;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0%;
+    width: 100%;
+    z-index: 1;
+}
+  
+.date:nth-child(1) {
+    left: 20%;
+}
+  
+.date:nth-child(2) {
+    left: 35.3%;
+}
+     
+.date:nth-child(3) {
+    left: 70.5%;
+}
+
+.tl-cards {
+    display: flex;
+    gap: 70px;
+}
+
+.tl-card  {
+    width: calc(100%/3);
+}
+
+.tl-card-upper {
+    display: grid;
+    margin-bottom: 8px;
+}
+
+.tl-card-upper h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 0.7;
+}
+
+.tl-card-upper h2 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.tl-card-lower h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.tl-card-lower p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.tl-card-lower img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Profile */
+
+.profile {
+    padding: 5% 10% 5%;
+    display: grid;
+    text-align: center;
+    background: #fdfdfd;
+}
+
+.profile-title {
+    margin-bottom: 25px;
+}
+
+.profile-title a {
+    font-size: 54px;
+    color: #3068e1;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.owner {
+	display: flex;
+	justify-content: space-between;
+    width: 50%;
+    gap: 30px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0.5px 5px 0 rgba(0,0,0,0.1);
+	width: 100%;
+}
+
+.upper {
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    background-color: #fdfdfd;
+    overflow: hidden;
+}
+
+.upper::after {
+    position: absolute;
+    width: 150%;
+    height: 80px;
+    bottom: -40px;
+    left: -30%;
+    content: "";
+    background-color: #fdfdfd;
+    transform: rotate(-13deg);
+    transition: all 0.5s;
+}
+
+.upper img {
+    width: 120%;
+}
+
+.upper a {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 30px;
+    text-align: right;
+	text-decoration: none;
+    font-size: 17px;
+    color: black;
+    padding: 15px 0;
+}
+
+.card:hover .upper::after {
+    background: #3068e1;
+}
+
+.card:hover .upper a {
+    color: white;
+    background: none;
+}
+
+.lower {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    text-align: right;
+    transition: all 0.5s;
+    border-radius: 0 0 10px 10px;
+    background-color: #fdfdfd;
+}
+
+.lower::after {
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 2px;
+    background-color: #3068e1;
+    content: "";
+    top: 5px;
+    right: 30px;
+}
+
+.lower h1 {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.lower p {
+    font-size: 14px;
+}
+
+.card:hover .lower {
+    background: #3068e1;
+    color: white;
+}
+
+.card:hover .lower::after {
+    background: white;
+}
+
+.staff {
+    width: 50%;
+    margin-left: 30px;
+}
+
+.staff img {
+    max-height: 350px;
+    width: auto;
+}
+
+.staff .upper::after {
+    height: 70px;
+    transform: rotate(0deg);
+}
+
+.staff h1 {
+    font-weight: 300;
+    line-height: 1;
+}
+
+
+/* Embed Insta */
+
+.insta {
+    padding: 2% 10% 5%;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.insta-title {
+    font-size: 54px;
+    color: #3068e1;
+    margin-bottom: 25px;
+}
+
+#insta {
+    height: 60vh;
+    width: 100%;
+    border-radius: 10px;
+    border-color: #3068e1;
+    border-style: solid;
+}
+
+
+/* Maps */
+
+.map {
+    padding: 2% 10% 5%;
+    background: #fdfdfd;
+    display: grid;
+}
+
+.map-title p {
+    font-size: 54px;
+    color: #3068e1;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 45px;
+}
+
+.map-content {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* Feedback */
+
+:root {
+    --bg-clr: #eaedf5;
+    --white: #fff;
+    --text-clr: #130e24;
+    --close-bg-clr: #ededed;
+    --icon-clr: #ededed;
+    --icon-hvr: #ffba44;
+    --btn-send-clr: #3b70ff;
+    --btn-send-hvr: #133bc8;
+    --btn-cancel-clr: #d4d9e5;
+    --border-clr: #ededed;
+    --border-hvr: #3b70ff;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper button {
+    border: 0;
+    padding: 12px 20px;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.wrapper button.send_btn {
+    border: 1px solid var(--btn-send-clr);
+    background: var(--btn-send-clr);
+    color: var(--white);
+}
+
+.wrapper button.send_btn:hover {
+    background: var(--btn-send-hvr);
+}
+
+.wrapper button.cancel_btn {
+    border: 1px solid var(--btn-cancel-clr);
+    color: var(--btn-cancel-clr);
+    margin-left: 20px;
+}
+
+.wrapper button.cancel_btn:hover {
+    background: var(--btn-cancel-clr);
+    color: var(--white);
+}
+
+.modal_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.modal_wrapper .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.modal_wrapper .modal {
+    width: 400px;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    border-radius: 5px;
+    padding: 60px 40px 40px;
+}
+
+.modal .close_btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: var(--close-bg-clr);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.modal .close_btn:hover{
+    background: var(--btn-send-clr);
+    color: var(--white)
+}
+
+.header p{
+    margin-top: 5px;
+}
+
+.header ul{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul li{
+    font-size: 32px;
+    color: var(--icon-clr);
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.header ul li:hover,
+.header ul li.active{
+    color: var(--icon-hvr);
+}
+
+.body .textarea{
+    width: 100%;
+    border: 2px solid var(--border-clr);
+    margin: 8px 0 20px;
+    border-radius: 5px;
+    height: 100px;
+    transition: border-color 0.5s ease;
+    }
+
+.body .textarea:focus{
+    border-color: var(--border-hvr);
+}
+
+.footer{
+    display: flex;
+}
+
+.footer button{
+    width: 50%;
+}
+
+.wrapper.active .modal_wrapper {
+    visibility: visible;
+    transition: all 0.5s ease;
+    }
+
+.wrapper.active .modal_wrapper .shadow {
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+
+/* Additional Styles for Feedback Section */
+
+.feedback-header {
+    font-size: 54px;
+    color: #3068e1;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,146 @@
+@media (max-width: 480px) {
+
+    /* Header */
+
+    header {
+        height: 40vh;
+    }
+
+    .header-title {
+        text-align: center;
+    }
+
+    .header-title a {
+        font-size: 72px;
+        line-height: 0.8;
+    }
+
+
+    /* Intro */
+
+    .intro {
+        padding: 3rem;
+        display: grid;
+        gap: 30px;
+    }
+
+    .intro .vl {
+        display: none;
+    }
+
+    .intro .card h1 {
+        font-size: 32px;
+    }
+
+    .intro .card p {
+        font-size: 20px;
+    }
+
+
+    /* Timeline */
+
+    .timeline {
+        padding: 3rem;
+    }
+
+    .tl-title {
+        font-size: 48px;
+    }
+
+    .tl-line {
+        display: none;
+    }
+    
+    .tl-cards {
+        display: grid;
+        gap: 45px;
+    }
+
+    .tl-card {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* Profile */
+
+    .profile {
+        padding: 3rem;
+    }
+
+    .profile-title a {
+        font-size: 48px;
+    }
+
+    .cards {
+        display: grid;
+        gap: 20px;
+    }
+
+    .upper a {
+        right: 1rem;
+    }
+
+    .upper img {
+        width: 120%;
+    }
+
+    .lower {
+        padding: 2rem 1rem 1rem;
+        text-align: center;
+    }
+
+    .lower::after {
+        right: 1rem;
+        width: 20px;
+    }
+
+    .lower h1 {
+        font-size: 22px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .owner {
+        gap: 0px;
+    }
+
+    .owner .card {
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .staff {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .staff .upper img {
+        width: 100%;
+    }
+    
+    
+    /* Embed Insta */
+
+    .insta {
+        padding: 3rem;
+    }
+
+    .insta-title {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    #insta {
+        height: 41vh;
+    }
+
+
+    /* Maps */
+
+    .map {
+        padding: 3rem;
+    }
+
+}

@@ -1,0 +1,245 @@
+* {
+    scroll-padding-top: 200px;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(253,253,253,1) 10%, rgba(253,253,253,0.6) 50%, rgba(253,253,253,0.2) 70%, rgba(253,253,253,0) 100%), url("../assets/header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.header-title a {
+    font-size: 90px;
+    color: #3068e1;
+}
+
+
+/* Partner */
+
+.partner {
+    display: grid;
+    justify-content: center;
+    padding: 2% 10% 2%;
+    background: #fdfdfd;
+}
+
+.partner p {
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.partner-logo img {
+    height: auto;
+    width: 360px;
+}
+
+
+/* Menu */
+
+.menu {
+    position: sticky;
+    top: 90px;
+    background: #fdfdfd;
+    padding: 2% 10% 2%;
+    z-index: 9;
+    text-align: center;
+}
+
+.menu-row {
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    flex: 1;
+    border-radius: 30px;
+    height: 50px;
+    align-items: center;
+    box-shadow: 0 0.5px 5px 0 rgba(0,0,0,0.1);
+}
+
+.menu-dd {
+    display: none;
+}
+
+.menu-row a {
+    width: auto;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    color: #3068e1;
+}
+
+.menu-row a:hover {
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.dd-button {
+    background: none;
+    border: solid #3068e1 2px;
+    color: #3068e1;
+    padding: 8px 40px;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+.dd-button:hover, .dd-button:focus {
+    background: #3068e1;
+    color: white;
+}
+  
+#myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+  
+#myInput:focus {
+    outline: 3px solid #ddd;
+}
+  
+.dd-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+  
+.dd-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.menu-dd a:hover {
+    background-color: #ddd;
+}
+  
+.show {
+    display: block;
+}
+
+
+/* Menu Cards */
+
+.cards {
+    display: grid;
+    align-items: center;
+    justify-content: left;
+    padding: 3% 10% 2%;
+    background: #fdfdfd;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    z-index: 8;
+}
+
+.card-title {
+    font-size: 48px;
+    line-height: 0.8;
+    color: #3068e1;
+    width: 15%;
+}
+
+.card-title img {
+    width: auto;
+    height: 28vh;
+    border-radius: 10px;
+    border-color: #3068e1;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0.5px 5px 0 rgba(0,0,0,0.1);
+}
+
+.card-m {
+    width: 85%;
+    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.card-s {
+    background: #f9fbff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+}
+
+.card-img {
+    height: 185px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.5s;
+    scale: 1.3;
+}
+
+.card-img img:hover{
+    transform: scale(1.3);
+}
+
+.card-info {
+    padding: 20px 16px 16px;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    line-height: 0.8;
+}
+
+.card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: black;
+    margin-top: 8px;
+    line-height: 0.9;
+}
+
+.card-price {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3068e1;
+    margin-top: 5px;
+}
+
+#num {
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>BARABIRU &nbsp|&nbsp Menu</title>
+    <link rel="icon" href="assets/favicon.png">
+
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/main-r.css">
+	<link rel="stylesheet" href="styles/menu.css">
+	<link rel="stylesheet" href="styles/menu-r.css">
+
+	<script defer src="script.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script> 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+	
+<nav>
+
+	<div class="nav">
+
+		<div class="nav-logo">
+			<img src="assets/logo.png">
+		</div>
+
+		<div class="nav-page">
+			<a id="hover" href="/">Home</a>
+			<a id="hover" href="/menu"><b>Menu</b></a>
+			<a id="hover" href="/about">About</a>
+			<a>|</a>
+			<a id="hover" href="/about.html#feedback">Feedback</a>
+			<a id="fa-instagram" href="https://instagram.com/barabirucoffee" target="_blank" class="fa fa-instagram"></a>
+		</div>
+
+	</div>
+
+</nav>
+
+<header>
+	
+	<div class="header-title">
+		<a>Our<b> Menu</b></a>
+	</div>
+
+</header>
+
+<section class="partner">
+
+	<div class="partner-text">
+		<p>AVAILABLE ON</p>
+	</div>
+
+	<div class="partner-logo">
+		<a href="https://food.grab.com/id/en/restaurant/barabiru-coffee-kota-baru-delivery/6-C3XZJTJCTYXYJ2?sourceID=20240404_223341_b6ab477259771712_MEXMPS" target="_blank">
+		<img src="assets/grabfood.png"></a>
+		<a href="https://gofood.co.id/pontianak/restaurant/barabiru-coffee-jl-wonobaru-c95496d4-35cc-4d48-80d3-fadf02ade0e0" target="_blank">
+		<img src="assets/gofood.png"></a>
+	</div>
+
+</section>
+
+<section class="menu">
+
+	<div class="menu-row">
+		<a href="#basic">Basic</a>
+		<a href="#non-coffee">Non-Coffee</a>
+		<a href="#coffee-mixed">Coffee Mixed</a>
+		<a href="#flavour">Flavour</a>
+		<a href="#frappe">Frappe</a>
+		<a href="#main-dish">Main Dish</a>
+		<a href="#snack">Snack</a>
+		<a href="#other">Other</a>
+	</div>
+
+	<div class="menu-dd">
+		<button onclick="myFunction()" class="dd-button">Categories</button>
+		<div id="myDropdown" class="dd-content">
+			<input type="text" placeholder="Search" id="myInput" onkeyup="filterFunction()">
+			<a href="#basic">Basic</a>
+			<a href="#non-coffee">Non-Coffee</a>
+			<a href="#coffee-mixed">Coffee Mixed</a>
+			<a href="#flavour">Flavour</a>
+			<a href="#frappe">Frappe</a>
+			<a href="#main-dish">Main Dish</a>
+			<a href="#snack">Snack</a>
+			<a href="#other">Other</a>
+		</div>
+	</div>
+
+</section>
+
+<section class="cards">
+
+	<div class="card" id="basic">
+
+		<div class="card-title">
+			<img src="assets/menu/basic.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Espresso</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Tubruk</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/basic/americano.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Americano</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Con Hielo Milk</p>
+					<p class="card-price">Rp <span id="num">22.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cafe Latte</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="card" id="non-coffee">
+
+		<div class="card-title">
+			<img src="assets/menu/non-coffee.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/apple-punch.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Apple Punch</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/strawberry-punch.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Strawberry Punch</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/blueberry-punch.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Blueberry Punch</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/peach-tea.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Peach Tea</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/lychee-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Lychee Tea</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/granalle.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Granalle</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/nutty-banana.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Nutty Banana</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/milky-strawberry.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Milky Strawberry</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/milky-blueberry.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Milky Blueberry</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/choco-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Choco Latte</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/matcha-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Matcha Latte</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/red-velvet-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Red Velvet Latte</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/non-coffee/taro-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Taro Latte</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="card" id="coffee-mixed">
+
+		<div class="card-title">
+			<img src="assets/menu/coffee-mixed.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/morning-gingji.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Morning Gingji</p>
+					<p class="card-desc">Espresso + Milk + Ginger</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/mokaina.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Mokaina</p>
+					<p class="card-desc">Espresso + Milk +<br>Moka Flavour</p>
+					<p class="card-price">Rp <span id="num">22.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/bara.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Bara</p>
+					<p class="card-desc">Espresso + Milk +<br>Butterscotch</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/madelin.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Madelin</p>
+					<p class="card-desc">Espresso + Milk +<br>Banana Flavour</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/bara.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Niga Sour</p>
+					<p class="card-desc">Espresso + Soda +<br>Strawberry Flavour</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/kapana.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Kapana</p>
+					<p class="card-desc">Espresso + Milk +<br>Pandan Flavour</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/coffee-mixed/kokopi.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Kokopi</p>
+					<p class="card-desc">Espresso + Milk +<br>Coconut Flavour</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="card" id="flavour">
+
+		<div class="card-title">
+			<img src="assets/menu/flavour.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/flavour/salted-caramel-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Salted Caramel Latte</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/flavour/vanilla-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Vanilla Latte</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/flavour/hazelnut-latte.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Hazelnut Latte</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<div class="card" id="frappe">
+
+		<div class="card-title">
+			<img src="assets/menu/frappe.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/avocado-chocolate.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Avocado Chocolate Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Coconut Chocolate Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/peach-cream.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Peach Cream Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/matcha.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Matcha Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/avocado-coffee.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Avocado Coffee Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/choco-chip.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Choco Chip Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/vanilla-regal.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Vanilla Regal Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Caramel Coffee Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/frappe/coconut-coffee.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Coconut Coffee Frappe</p>
+					<p class="card-price">Rp <span id="num">27.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<div class="card" id="main-dish">
+
+		<div class="card-title">
+			<img src="assets/menu/main-dish.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/mie-bangladesh.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Mie Bangladesh</p>
+					<p class="card-price">Rp <span id="num">15.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Nasi Goreng Magelangan</p>
+					<p class="card-price">Rp <span id="num">15.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Thai Basil Noodle</p>
+					<p class="card-price">Rp <span id="num">15.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Creamy Mushroom Noodle</p>
+					<p class="card-price">Rp <span id="num">23.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/ayam-cabe-garam.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Ayam Cabe Garam</p>
+					<p class="card-price">Rp <span id="num">29.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/ayam-sambal-korek.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Ayam Sambal Korek</p>
+					<p class="card-price">Rp <span id="num">29.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/ayam-sambal-matah.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Ayam Sambal Matah</p>
+					<p class="card-price">Rp <span id="num">29.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/ayam-suwir-bali.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Ayam Suwir Bali</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/chicken-salted-egg.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Chicken Salted Egg</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/main-dish/chicken-smokey-black-pepper.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Chicken Smokey Black Pepper</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+		
+	<div class="card" id="snack">
+
+		<div class="card-title">
+			<img src="assets/menu/snack.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/cireng.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cireng</p>
+					<p class="card-price">Rp <span id="num">18.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/ubi-goreng-bawang.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Ubi Goreng Bawang</p>
+					<p class="card-price">Rp <span id="num">18.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/churros.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Churros</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/tahu-cabe-garam.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Tahu Cabe Garam</p>
+					<p class="card-price">Rp <span id="num">20.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/pisang-keju-susu.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Pisang Keju Susu</p>
+					<p class="card-price">Rp <span id="num">22.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/snack/sistagor.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Sistagor</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="card" id="other">
+
+		<div class="card-title">
+			<img src="assets/menu/other.png">
+		</div>
+
+		<div class="card-m">
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/kopi-rakyat.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Kopi Rakyat</p>
+					<p class="card-price">Rp <span id="num">15.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/coldbrew-orange.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cold Brew Orange</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/coldbrew-pineapple.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cold Brew Pineapple</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/coldbrew-strawberry.webp">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cold Brew Strawberry</p>
+					<p class="card-price">Rp <span id="num">35.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Upsize 1L</p>
+					<p class="card-price">Rp <span id="num">88.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">V60</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/none.png">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Japanese Ice Drip</p>
+					<p class="card-price">Rp <span id="num">25.000</span></p>
+				</div>
+			</div>
+			
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/cendol-latte.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Cendol Latte</p>
+					<p class="card-price">Rp <span id="num">28.000</span></p>
+				</div>
+			</div>
+
+			<div class="card-s">
+				<div class="card-img">
+					<img src="assets/menu/other/klepon-latte.jpg">
+				</div>
+				<div class="card-info">
+					<p class="card-name">Klepon Latte</p>
+					<p class="card-price">Rp <span id="num">28.000</span></p>
+				</div>
+			</div>
+
+		</div>
+	
+	</div>
+
+
+</section>
+
+<footer>
+	
+	<div class="footer">
+
+		<div class="footer-content">
+			<img src="assets/logo.png">
+			<p id="address-1">BARABIRU Coffee and Creativity</p>
+			<p id="address-2">
+			Jl. Wono Baru No. 9, Pontianak Selatan<br>
+			Pontianak, Kalimantan Barat 78155
+			</p>
+			<p id="copyright">&copy 2024 &nbsp&nbsp|&nbsp&nbsp All Rights Reserved</p>
+		</div>
+
+		<div class="footer-pattern">
+			<img id="pattern" src="assets/wave.png">
+		</div>
+
+	</div>
+
+</footer>
+
+</body>
+
+</html>
