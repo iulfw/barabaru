@@ -4,8 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/route');
-var usersRouter = require('./routes/users');
+//library
+var flash   = require('express-flash');
+var session = require('express-session');
+
+var indexRouter = require('./routes/index.js');
+var usersRouter = require('./routes/users.js');
+var postsRouter = require('./routes/menu.js'); // <-- route posts
 
 var app = express();
 
@@ -19,9 +24,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(session({ 
+  cookie: { 
+    maxAge: 60000 
+  },
+  store: new session.MemoryStore,
+  saveUninitialized: true,
+  resave: 'true',
+  secret: 'secret'
+}))
 
+app.use(flash())
+
+app.use('/', indexRouter);
+app.use('./routes/users.js', usersRouter);
+app.use('./routes/menu.js', postsRouter); // use route posts di Express
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
