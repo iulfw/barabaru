@@ -8,9 +8,9 @@ var logger = require('morgan');
 var flash   = require('express-flash');
 var session = require('express-session');
 
-var indexRouter = require('./routes/index.js');
-var usersRouter = require('./routes/users.js');
-var postsRouter = require('./routes/menu.js'); // <-- route posts
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var menuRouter = require('./routes/menu'); // <-- route menu
 
 var app = express();
 
@@ -37,8 +37,8 @@ app.use(session({
 app.use(flash())
 
 app.use('/', indexRouter);
-app.use('./routes/users.js', usersRouter);
-app.use('./routes/menu.js', postsRouter); // use route posts di Express
+app.use('/users', usersRouter);
+app.use('/menu', menuRouter); // use route menu di Express
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
