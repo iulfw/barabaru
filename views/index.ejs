@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="styles/index.css">
 	<link rel="stylesheet" href="styles/index-r.css">
 
-	<script defer src="script.js"></script>
+	<script defer src="script/script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +39,8 @@
 			<a id="hover" href="/menu">Menu</a>
 			<a id="hover" href="/about">About</a>
 			<a>|</a>
-			<a id="hover" href="/about.html#feedback">Feedback</a>
+			<a id="hover" href="javascript:open_feedback()">Feedback</a>
 			<a id="fa-instagram" href="https://instagram.com/barabirucoffee" target="_blank" class="fa fa-instagram"></a>
-		
-			
 		</div>
 
 	</div>
@@ -209,7 +207,11 @@
 	</div>
 
 </footer>
-
+<script>
+	function open_feedback(){
+		alert("test");
+	}
+</script>
 </body>
 
 </html>  
