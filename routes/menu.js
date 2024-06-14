@@ -23,143 +23,219 @@ router.get('/', function (req, res, next) {
 // Create
 router.get('/create', function (req, res, next) {
     res.render('menu/create', {
-        title: '',
-        content: ''
+        id: '',
+        type: '',
+        name: '',
+        price: '',
+        descr: ''
     })
 })
 
 // Store
 router.post('/store', function (req, res, next) {
-    
-    let title   = req.body.title;
-    let content = req.body.content;
-    let errors  = false;
+    let id = req.body.id;
+    let type = req.body.type;
+    let name = req.body.name;
+    let price = req.body.price;
+    let descr = req.body.descr;
+    let errors = false;
 
-    if(title.length === 0) {
+    if (id.length === 0) {
         errors = true;
-
-        req.flash('error', "Please Enter { }");
+        req.flash('error', "Please Enter ID");
         res.render('menu/create', {
-            title: title,
-            content: content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         })
     }
 
-    if(content.length === 0) {
+    if (type.length === 0) {
         errors = true;
-
-        req.flash('error', "Please Enter { }");
+        req.flash('error', "Please Enter Type");
         res.render('menu/create', {
-            title: title,
-            content: content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         })
     }
 
-    if(!errors) {
+    if (name.length === 0) {
+        errors = true;
+        req.flash('error', "Please Enter Name");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
 
+    if (price.length === 0) {
+        errors = true;
+        req.flash('error', "Please Enter Price");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (descr.length === 0) {
+        errors = true;
+        req.flash('error', "Please Enter Description");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (!errors) {
         let formData = {
-            title: title,
-            content: content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         }
-        
-        // insert query
-        connection.query('INSERT INTO menu SET ?', formData, function(err, result) {
-            //if(err) throw err
+
+        connection.query('INSERT INTO menu SET ?', formData, function (err, result) {
             if (err) {
                 req.flash('error', err)
-                 
-                // render to add.ejs
                 res.render('menu/create', {
-                    title: formData.title,
-                    content: formData.content                    
+                    id: formData.id,
+                    type: formData.type,
+                    name: formData.name,
+                    price: formData.price,
+                    descr: formData.descr
                 })
-            } else {                
+            } else {
                 req.flash('success', 'Menu Has Been Added');
                 res.redirect('/menu');
             }
         })
     }
-
 })
 
 // Edit
-router.get('/edit/(:id)', function(req, res, next) {
-
+router.get('/edit/(:id)', function (req, res, next) {
     let id = req.params.id;
-   
-    connection.query('SELECT * FROM menu WHERE id = ' + id, function(err, rows, fields) {
-        if(err) throw err
-         
-        // if user not found
+
+    connection.query('SELECT * FROM menu WHERE id = ' + id, function (err, rows, fields) {
+        if (err) throw err
+
         if (rows.length <= 0) {
             req.flash('error', 'Data Post Dengan ID ' + id + " Tidak Ditemukan")
             res.redirect('/menu')
-        }
-        // if book found
-        else {
-            // render to edit.ejs
+        } else {
             res.render('menu/edit', {
-                id:      rows[0].id,
-                title:   rows[0].title,
-                content: rows[0].content
+                id: rows[0].id,
+                type: rows[0].type,
+                name: rows[0].name,
+                price: rows[0].price,
+                descr: rows[0].descr
             })
         }
     })
 })
 
 // Update
-router.post('/update/:id', function(req, res, next) {
+router.post('/update/:id', function (req, res, next) {
+    let id = req.params.id;
+    let type = req.body.type;
+    let name = req.body.name;
+    let price = req.body.price;
+    let descr = req.body.descr;
+    let errors = false;
 
-    let id      = req.params.id;
-    let title   = req.body.title;
-    let content = req.body.content;
-    let errors  = false;
-
-    if(title.length === 0) {
+    if (id.length === 0) {
         errors = true;
-
-        // set flash message
-        req.flash('error', "Silahkan Masukkan Title");
-        // render to edit.ejs with flash message
+        req.flash('error', "Silahkan Masukkan id");
         res.render('menu/edit', {
-            id:         req.params.id,
-            title:      title,
-            content:    content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         })
     }
 
-    if(content.length === 0) {
+    if (type.length === 0) {
         errors = true;
-
-        // set flash message
-        req.flash('error', "Silahkan Masukkan Konten");
-        // render to edit.ejs with flash message
+        req.flash('error', "Silahkan Masukkan Type");
         res.render('menu/edit', {
-            id:         req.params.id,
-            title:      title,
-            content:    content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         })
     }
 
-    // if no error
-    if( !errors ) {   
- 
+    if (name.length === 0) {
+        errors = true;
+        req.flash('error', "Silahkan Masukkan Name");
+        res.render('menu/edit', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (price.length === 0) {
+        errors = true;
+        req.flash('error', "Silahkan Masukkan Price");
+        res.render('menu/edit', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (descr.length === 0) {
+        errors = true;
+        req.flash('error', "Silahkan Masukkan Description");
+        res.render('menu/edit', {
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (!errors) {
         let formData = {
-            title: title,
-            content: content
+            id: id,
+            type: type,
+            name: name,
+            price: price,
+            descr: descr
         }
 
-        // update query
-        connection.query('UPDATE menu SET ? WHERE id = ' + id, formData, function(err, result) {
-            //if(err) throw err
+        connection.query('UPDATE menu SET ? WHERE id = ' + id, formData, function (err, result) {
             if (err) {
-                // set flash message
                 req.flash('error', err)
-                // render to edit.ejs
                 res.render('menu/edit', {
-                    id:     req.params.id,
-                    name:   formData.name,
-                    author: formData.author
+                    id: formData.id,
+                    type: formData.type,
+                    name: formData.name,
+                    price: formData.price,
+                    descr: formData.descr
                 })
             } else {
                 req.flash('success', 'Data Berhasil Diupdate!');
@@ -170,21 +246,15 @@ router.post('/update/:id', function(req, res, next) {
 })
 
 // Delete
-router.get('/delete/(:id)', function(req, res, next) {
-
+router.get('/delete/(:id)', function (req, res, next) {
     let id = req.params.id;
-     
-    connection.query('DELETE FROM menu WHERE id = ' + id, function(err, result) {
-        //if(err) throw err
+
+    connection.query('DELETE FROM menu WHERE id = ' + id, function (err, result) {
         if (err) {
-            // set flash message
             req.flash('error', err)
-            // redirect to menu page
             res.redirect('/menu')
         } else {
-            // set flash message
             req.flash('success', 'Data Berhasil Dihapus!')
-            // redirect to menu page
             res.redirect('/menu')
         }
     })

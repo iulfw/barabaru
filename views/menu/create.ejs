@@ -22,15 +22,27 @@
                     <div class="card-body">
                         <form action="/menu/store" method="post">
                             <div class="form-group">
-                                <label>Title</label>
-                                <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Masukkan Title Post">
+                                <label>ID</label>
+                                <input type="text" class="form-control" name="id">
                             </div>
                             <div class="form-group">
-                                <label>Konten</label>
-                                <textarea class="form-control" name="content" rows="4" placeholder="Masukkan Konten Post"><%= content %></textarea>
+                                <label>Type</label>
+                                <input type="text" class="form-control" name="type">
                             </div>
-                            <button type="submit" class="btn btn-primary">SIMPAN</button>
-                            <button type="reset" class="btn btn-warning">RESET</button>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" name="price">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" name="descr"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="reset" class="btn btn-warning">Clear</button>
                         </form>
                     </div>
                 </div>
@@ -41,6 +53,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    </script>
 </body>
 </html>
