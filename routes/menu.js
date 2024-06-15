@@ -160,7 +160,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (id.length === 0) {
         errors = true;
-        req.flash('error', "Silahkan Masukkan id");
+        req.flash('error', "Please Enter id");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -172,7 +172,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (type.length === 0) {
         errors = true;
-        req.flash('error', "Silahkan Masukkan Type");
+        req.flash('error', "Please Enter Type");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -184,7 +184,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (name.length === 0) {
         errors = true;
-        req.flash('error', "Silahkan Masukkan Name");
+        req.flash('error', "Please Enter Name");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -196,7 +196,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (price.length === 0) {
         errors = true;
-        req.flash('error', "Silahkan Masukkan Price");
+        req.flash('error', "Please Enter Price");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -208,7 +208,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (descr.length === 0) {
         errors = true;
-        req.flash('error', "Silahkan Masukkan Description");
+        req.flash('error', "Please Enter Description");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -246,7 +246,7 @@ router.post('/update/:id', function (req, res, next) {
 })
 
 // Delete
-router.get('/delete/(:id)', function (req, res, next) {
+router.get('/delete/:id', function (req, res, next) {
     let id = req.params.id;
 
     connection.query('DELETE FROM menu WHERE id = ' + id, function (err, result) {

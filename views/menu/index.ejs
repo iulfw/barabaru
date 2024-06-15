@@ -48,8 +48,8 @@
                                             <td><%= data[i].price%></td>
                                             <td><%= data[i].descr%></td>
                                             <td class="text-center">
-                                                <a href="/menu/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">EDIT</a>
-                                                <a onclick="return alert('Are You sure?')" href="/menu/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">HAPUS</a>
+                                                <a href="/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">EDIT</a>
+                                                <a onclick="return alert('Are You sure?')" href="/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">DELETE</a>
                                             </td>
                                         </tr>
                                     <% }
@@ -58,7 +58,7 @@
                                     <tr>
                                         <td colspan="6">
                                             <div class="alert alert-danger" role="alert">
-                                                Data Tidak Ditemukan !
+                                                Menu Not Found
                                             </div>
                                         </td>
                                     </tr>
