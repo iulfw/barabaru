@@ -88,18 +88,6 @@ router.post('/store', function (req, res, next) {
         })
     }
 
-    if (descr.length === 0) {
-        errors = true;
-        req.flash('error', "Please Enter Description");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-
     if (!errors) {
         let formData = {
             id: id,
@@ -128,14 +116,14 @@ router.post('/store', function (req, res, next) {
 })
 
 // Edit
-router.get('/edit/(:id)', function (req, res, next) {
+router.get('/edit/:id', function (req, res, next) {
     let id = req.params.id;
 
-    connection.query('SELECT * FROM menu WHERE id = ' + id, function (err, rows, fields) {
+    connection.query('SELECT * FROM menu WHERE id = ?', [id], function (err, rows, fields) {
         if (err) throw err
 
         if (rows.length <= 0) {
-            req.flash('error', 'Data Post Dengan ID ' + id + " Tidak Ditemukan")
+            req.flash('error', 'Menu ID ' + id + " is Unavailable")
             res.redirect('/menu')
         } else {
             res.render('menu/edit', {
@@ -160,7 +148,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (id.length === 0) {
         errors = true;
-        req.flash('error', "Please Enter id");
+        req.flash('error', "Please Enter ID");
         res.render('menu/edit', {
             id: id,
             type: type,
@@ -206,18 +194,6 @@ router.post('/update/:id', function (req, res, next) {
         })
     }
 
-    if (descr.length === 0) {
-        errors = true;
-        req.flash('error', "Please Enter Description");
-        res.render('menu/edit', {
-            id: id,
-            type: type,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-
     if (!errors) {
         let formData = {
             id: id,
@@ -227,7 +203,7 @@ router.post('/update/:id', function (req, res, next) {
             descr: descr
         }
 
-        connection.query('UPDATE menu SET ? WHERE id = ' + id, formData, function (err, result) {
+        connection.query('UPDATE menu SET ? WHERE id = ?', [formData, id], function (err, result) {
             if (err) {
                 req.flash('error', err)
                 res.render('menu/edit', {
@@ -238,7 +214,7 @@ router.post('/update/:id', function (req, res, next) {
                     descr: formData.descr
                 })
             } else {
-                req.flash('success', 'Data Berhasil Diupdate!');
+                req.flash('success', 'Menu Has Been Updated');
                 res.redirect('/menu');
             }
         })
@@ -249,12 +225,12 @@ router.post('/update/:id', function (req, res, next) {
 router.get('/delete/:id', function (req, res, next) {
     let id = req.params.id;
 
-    connection.query('DELETE FROM menu WHERE id = ' + id, function (err, result) {
+    connection.query('DELETE FROM menu WHERE id = ?', [id], function (err, result) {
         if (err) {
             req.flash('error', err)
             res.redirect('/menu')
         } else {
-            req.flash('success', 'Data Berhasil Dihapus!')
+            req.flash('success', 'Menu Has Been Deleted')
             res.redirect('/menu')
         }
     })
