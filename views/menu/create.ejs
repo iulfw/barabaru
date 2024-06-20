@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu - Create</title>
+
+    <title>BARABIRU &nbsp|&nbsp Dashboard</title>
+    <link rel="icon" href="assets/favicon.png">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    * {
+        font-family: "Baloo 2";
+    }
+    </style>
+
 </head>
 
 <body style="background: lightgrey">
@@ -27,7 +40,21 @@
                             </div>
                             <div class="form-group">
                                 <label>Type</label>
-                                <input type="text" class="form-control" name="type">
+                                <select class="form-control" name="type">
+                                    <option value="">Select</option>
+                                    <option value="basic">Basic</option>
+                                    <option value="non-coffee">Non-Coffee</option>
+                                    <option value="coffee-mixed">Coffee Mixed</option>
+                                    <option value="flavour">Flavour</option>
+                                    <option value="frappe">Frappe</option>
+                                    <option value="maindish">Main Dish</option>
+                                    <option value="snack">Snack</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Pic</label>
+                                <input type="file" class="form-control" name="pic">
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
