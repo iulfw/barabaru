@@ -8,7 +8,7 @@ var flash   = require('express-flash');
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
 var menuRouter = require('./routes/menu');
 
 var app = express();
@@ -36,7 +36,7 @@ app.use(session({
 app.use(flash())
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 app.use('/menu', menuRouter);
 
 // catch 404 and forward to error handler
