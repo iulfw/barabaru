@@ -116,7 +116,7 @@
 				  	<% if (data[i].type === 'basic') { %>
 			<div class="card-s" id="<%= data[i].id %>">
 				<div class="card-img">
-					<img src="assets/menu/none.png">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
 				</div>
 				<div class="card-info">
 					<p class="card-name"><%= data[i].name %></p>
@@ -188,6 +188,23 @@
 		</div>
 
 		<div class="card-m">
+
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'non-coffee') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
 
 			<div class="card-s">
 				<div class="card-img">
@@ -331,6 +348,24 @@
 
 		<div class="card-m">
 
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'coffee-mixed') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-desc"><%= data[i].descr %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
+
 			<div class="card-s">
 				<div class="card-img">
 					<img src="assets/menu/coffee-mixed/morning-gingji.webp">
@@ -420,6 +455,23 @@
 
 		<div class="card-m">
 
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'flavour') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>			
+
 			<div class="card-s">
 				<div class="card-img">
 					<img src="assets/menu/flavour/salted-caramel-latte.webp">
@@ -461,6 +513,23 @@
 		</div>
 
 		<div class="card-m">
+
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'frappe') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
 
 			<div class="card-s">
 				<div class="card-img">
@@ -563,6 +632,23 @@
 		</div>
 
 		<div class="card-m">
+
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'main-dish') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
 
 			<div class="card-s">
 				<div class="card-img">
@@ -676,6 +762,23 @@
 
 		<div class="card-m">
 
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'snack') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
+
 			<div class="card-s">
 				<div class="card-img">
 					<img src="assets/menu/snack/cireng.webp">
@@ -747,6 +850,23 @@
 		</div>
 
 		<div class="card-m">
+
+			<!-- Database Menu Display -->
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'other') { %>
+			<div class="card-s" id="<%= data[i].id %>">
+				<div class="card-img">
+					<img src="./public/assets/menu/<%= data[i].pic %>">
+				</div>
+				<div class="card-info">
+					<p class="card-name"><%= data[i].name %></p>
+					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
+				</div>
+			</div>
+					<% } %>
+				<% } %>
+			<% } %>
 
 			<div class="card-s">
 				<div class="card-img">

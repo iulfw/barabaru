@@ -8,7 +8,7 @@ var connection = require('../config/database');
 // Set Storage Engine
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, '../public/assets/menu');
+        cb(null, './public/assets/menu');
     },
     filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
@@ -80,43 +80,6 @@ router.post('/store', function (req, res, next) {
     if (type.length === 0) {
         errors = true;
         req.flash('error', "Please Select a Type");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-
-    if (!req.file || !req.file.pic) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-    if (!req.file || !req.file.pic.buffer) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-    if (!req.file || !req.file.pic.size) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
         res.render('menu/create', {
             id: id,
             type: type,
@@ -232,43 +195,6 @@ router.post('/update/:id', function (req, res, next) {
         errors = true;
         req.flash('error', "Please Enter Type");
         res.render('menu/edit', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-
-    if (!req.file || !req.file.pic) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-    if (!req.file || !req.file.pic.buffer) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
-        res.render('menu/create', {
-            id: id,
-            type: type,
-            pic: pic,
-            name: name,
-            price: price,
-            descr: descr
-        })
-    }
-    if (!req.file || !req.file.pic.size) {
-        errors = true;
-        req.flash('error', "Please Upload a Pic");
-        res.render('menu/create', {
             id: id,
             type: type,
             pic: pic,
