@@ -1,8 +1,28 @@
 var express = require('express');
 var router = express.Router();
+var multer = require('multer');
 
 // Import Database
 var connection = require('../config/database');
+
+// Set Storage Engine
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, '../public/assets/menu');
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+// Initialize Upload
+var upload = multer({
+    storage: storage,
+    limits: { fileSize: 1000000 }, 
+    fileFilter: function(req, file, cb) {
+        checkFileType(file, cb);
+    }
+}).single('pic');
 
 // Index
 router.get('/', function (req, res, next) {
@@ -23,11 +43,14 @@ router.get('/', function (req, res, next) {
 // Create
 router.get('/create', function (req, res, next) {
     res.render('menu/create', {
-        id: '',
-        type: '',
-        name: '',
-        price: '',
-        descr: ''
+        menu: {
+            id: '',
+            type: '',
+            pic: '',
+            name: '',
+            price: '',
+            descr: ''
+        }
     })
 })
 
@@ -35,6 +58,7 @@ router.get('/create', function (req, res, next) {
 router.post('/store', function (req, res, next) {
     let id = req.body.id;
     let type = req.body.type;
+    let pic = req.body.pic;
     let name = req.body.name;
     let price = req.body.price;
     let descr = req.body.descr;
@@ -42,10 +66,11 @@ router.post('/store', function (req, res, next) {
 
     if (id.length === 0) {
         errors = true;
-        req.flash('error', "Please Enter ID");
+        req.flash('error', "Please Enter an ID");
         res.render('menu/create', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -54,10 +79,48 @@ router.post('/store', function (req, res, next) {
 
     if (type.length === 0) {
         errors = true;
-        req.flash('error', "Please Enter Type");
+        req.flash('error', "Please Select a Type");
         res.render('menu/create', {
             id: id,
             type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (!req.file || !req.file.pic) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+    if (!req.file || !req.file.pic.buffer) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+    if (!req.file || !req.file.pic.size) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -66,10 +129,11 @@ router.post('/store', function (req, res, next) {
 
     if (name.length === 0) {
         errors = true;
-        req.flash('error', "Please Enter Name");
+        req.flash('error', "Please Enter a Name");
         res.render('menu/create', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -78,10 +142,11 @@ router.post('/store', function (req, res, next) {
 
     if (price.length === 0) {
         errors = true;
-        req.flash('error', "Please Enter Price");
+        req.flash('error', "Please Enter a Price");
         res.render('menu/create', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -92,6 +157,7 @@ router.post('/store', function (req, res, next) {
         let formData = {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -103,6 +169,7 @@ router.post('/store', function (req, res, next) {
                 res.render('menu/create', {
                     id: formData.id,
                     type: formData.type,
+                    pic: formData.pic,
                     name: formData.name,
                     price: formData.price,
                     descr: formData.descr
@@ -129,6 +196,7 @@ router.get('/edit/:id', function (req, res, next) {
             res.render('menu/edit', {
                 id: rows[0].id,
                 type: rows[0].type,
+                pic: rows[0].pic,
                 name: rows[0].name,
                 price: rows[0].price,
                 descr: rows[0].descr
@@ -141,6 +209,7 @@ router.get('/edit/:id', function (req, res, next) {
 router.post('/update/:id', function (req, res, next) {
     let id = req.params.id;
     let type = req.body.type;
+    let pic = req.body.pic;
     let name = req.body.name;
     let price = req.body.price;
     let descr = req.body.descr;
@@ -152,6 +221,7 @@ router.post('/update/:id', function (req, res, next) {
         res.render('menu/edit', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -164,6 +234,44 @@ router.post('/update/:id', function (req, res, next) {
         res.render('menu/edit', {
             id: id,
             type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+
+    if (!req.file || !req.file.pic) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+    if (!req.file || !req.file.pic.buffer) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
+            name: name,
+            price: price,
+            descr: descr
+        })
+    }
+    if (!req.file || !req.file.pic.size) {
+        errors = true;
+        req.flash('error', "Please Upload a Pic");
+        res.render('menu/create', {
+            id: id,
+            type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -176,6 +284,7 @@ router.post('/update/:id', function (req, res, next) {
         res.render('menu/edit', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -188,6 +297,7 @@ router.post('/update/:id', function (req, res, next) {
         res.render('menu/edit', {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -198,6 +308,7 @@ router.post('/update/:id', function (req, res, next) {
         let formData = {
             id: id,
             type: type,
+            pic: pic,
             name: name,
             price: price,
             descr: descr
@@ -209,6 +320,7 @@ router.post('/update/:id', function (req, res, next) {
                 res.render('menu/edit', {
                     id: formData.id,
                     type: formData.type,
+                    pic: formData.pic,
                     name: formData.name,
                     price: formData.price,
                     descr: formData.descr

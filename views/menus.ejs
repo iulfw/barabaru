@@ -111,18 +111,20 @@
 		<div class="card-m">
 
 			<!-- Database Menu Display -->
-			<% if(data.length) 
-				for(var i=0; i<data.length; i++) {%>
+			<% if (data.length) { %>
+				<% for (var i=0; i<data.length; i++) { %>
+				  	<% if (data[i].type === 'basic') { %>
 			<div class="card-s" id="<%= data[i].id %>">
 				<div class="card-img">
 					<img src="assets/menu/none.png">
 				</div>
 				<div class="card-info">
 					<p class="card-name"><%= data[i].name %></p>
-					<p class="card-desc"><%= data[i].descr %></p>
 					<p class="card-price">Rp <span id="num"><%= data[i].price %></span></p>
 				</div>
 			</div>
+					<% } %>
+				<% } %>
 			<% } %>
 			
 			<div class="card-s">
