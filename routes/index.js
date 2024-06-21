@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+var connection = require('../config/database');
+
+
 /* Read Main Website */
 
 router.get('/', function(req, res, next) {
@@ -12,7 +15,14 @@ router.get('/about', function(req, res, next) {
 });
 
 router.get('/menus', function(req, res, next) {
-    res.render('menus', { title: 'Menu' });
+  connection.query('SELECT * FROM menu', function (err, rows) {
+    if (err) {
+        req.flash('error', err);
+        res.render('menus', { title: 'Menu',  data: '' });
+    } else {
+        res.render('menus', { title: 'Menu',  data: rows });
+    }
+  });
 });
 
 router.get('/feedback', function(req, res, next) {
