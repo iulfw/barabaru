@@ -16,16 +16,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+
     * {
         font-family: "Baloo 2";
     }
+
+    body {
+        background: #fdfdfd;
+    }
+
+    .container h1 {
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    #user {
+        font-weight: bold;
+        color: #3068e1;
+    }
+
     </style>
 
 </head>
 
-<body style="background: lightgrey">
+<body>
 
-    <div class="container mt-5">
+    <div class="container">
+        <h1>Welcome, <span id="user">Bara</span></h1>
+
         <div class="row">
             <div class="col-md-12">
 
@@ -42,19 +62,18 @@
                         <a href="menu/create" class="btn btn-md btn-success mb-3">Add Menu</a>
                         <table class="table table-bordered">
                             <thead>
-                              <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Pic</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Description</th>
-                              </tr>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Pic</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Description</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <% if(data.length){
-                                    
+                                <% if(data.length) {
                                     for(var i = 0; i< data.length; i++) {%>  
                                         <tr>
                                             <th scope="row" class="text-center"><%= (i+1) %></th>
@@ -71,7 +90,7 @@
                                         </tr>
                                     <% }
                                     
-                                }else{ %>
+                                } else { %>
                                     <tr>
                                         <td colspan="6">
                                             <div class="alert alert-danger" role="alert">
@@ -93,4 +112,5 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </body>
+
 </html>

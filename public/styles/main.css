@@ -62,6 +62,22 @@ nav.scroll {
     width: 100%; 
 }
 
+#hoverr {
+    background: #3068e1;
+    padding: 2px 20px;
+    color: #fdfdfd;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+#hoverr:hover {
+    background: none;
+    color: #3068e1;
+    border: solid 1px #3068e1;
+    transition: all 0.3s;
+}
+
 #fa-instagram {
     margin-right: 0px;
 }
