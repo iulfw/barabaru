@@ -13,6 +13,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -25,9 +27,15 @@
         background: #fdfdfd;
     }
 
-    .container h1 {
+    .nav {
+        display: flex;
+        justify-content: space-between;
         margin-top: 10vh;
         margin-bottom: 5vh;
+        align-items: center;
+    }
+
+    .nav h1 {
         font-size: 48px;
         text-align: center;
     }
@@ -37,6 +45,40 @@
         color: #3068e1;
     }
 
+    #hover {
+        background: #3068e1;
+        padding: 2px 20px;
+        color: #fdfdfd;
+        font-weight: 700;
+        border-radius: 20px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    #hover:hover {
+        background: none;
+        color: #3068e1;
+        border: solid 1px #3068e1;
+        transition: all 0.3s;
+    }
+
+    #hoverr {
+        background: #aa0000;
+        padding: 2px 20px;
+        color: #fdfdfd;
+        font-weight: 700;
+        border-radius: 20px;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    #hoverr:hover {
+        background: none;
+        color: #aa0000;
+        border: solid 1px #aa0000;
+        transition: all 0.3s;
+    }
+
     </style>
 
 </head>
@@ -44,7 +86,17 @@
 <body>
 
     <div class="container">
-        <h1>Welcome, <span id="user">Bara</span></h1>
+
+        <div class="nav">
+            <h1>Welcome, <span id="user">Bara</span></h1>
+
+            <div class="nav-btn">
+                <a id="hover" href="/" target="_blank">
+                    <i class="fa fa-globe"></i>&nbsp&nbsp Website</a>
+                <a id="hoverr" href="/user">
+                    <i class="fa fa-sign-out"></i>&nbsp&nbsp Exit</a>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
