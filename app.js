@@ -13,11 +13,6 @@ var menuRouter = require('./routes/menu');
 
 var app = express();
 
-// Render Index
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
 // View Engine Setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
