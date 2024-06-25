@@ -1,6 +1,4 @@
 .vercel
-<<<<<<< HEAD
 .gitignore
 .env
-=======
->>>>>>> 581d74d4ed29636eba48eb96fc511e04cd3baa22
+test.js

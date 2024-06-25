@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+var router = express.Router();
 
 // Set View Engine
 app.set('view engine', 'ejs');
@@ -9,20 +10,29 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Define Router
+var indexRouter = require('./routes/index');
+var userRouter = require('./routes/user');
+var menuRouter = require('./routes/menu');
+
+app.use('/', indexRouter);
+app.use('/user', userRouter);
+app.use('/menu', menuRouter);
+
 // Render Front-End
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/menus', (req, res) => {
-    res.render('menus');
+router.get('/menus', (req, res) => {
+  res.render('menus');
 });
 
 app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.get('/user', (req, res) => {
+router.get('/user', (req, res) => {
     res.render('user/index');
 });
 
@@ -37,5 +47,5 @@ app.get('/404', (req, res) => {
 // Start Server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is Running on Port ${port}`);
 });
