@@ -26,6 +26,14 @@ app.get('/user', (req, res) => {
     res.render('user/index');
 });
 
+app.get('/menu', (req, res) => {
+  res.render('menu/index');
+});
+
+app.get('/404', (req, res) => {
+  res.render('404');
+});
+
 // Start Server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
