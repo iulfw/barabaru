@@ -23,8 +23,13 @@
     }
     
     .nav-page a {
-        margin-right: 30px;
+        font-size: 15px;
+        margin-right: 27px;
         margin-bottom: 1rem;
+    }
+
+    #label {
+        display: none;
     }
     
 

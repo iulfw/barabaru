@@ -8,8 +8,8 @@
 
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/main-r.css">
-	<link rel="stylesheet" href="styles/menus.css">
-	<link rel="stylesheet" href="styles/menus-r.css">
+	<link rel="stylesheet" href="styles/menu.css">
+	<link rel="stylesheet" href="styles/menu-r.css">
 
 	<script defer src="styles/script.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script> 
@@ -40,7 +40,7 @@
 			<a id="hover" href="/about">About</a>
 			<a>|</a>
 			<a id="hoverr" href="/login" target="_blank">
-				<i class="fa fa-user-circle"></i>&nbsp&nbsp Admin</a>
+				<i class="fa fa-user-circle"></i><span id=label>&nbsp&nbsp Admin</span></a>
 			<a id="fa-instagram" href="https://instagram.com/barabirucoffee" target="_blank" class="fa fa-instagram"></a>
 		</div>
 
@@ -87,7 +87,6 @@
 	<div class="menu-dd">
 		<button onclick="myFunction()" class="dd-button">Categories</button>
 		<div id="myDropdown" class="dd-content">
-			<input type="text" placeholder="Search" id="myInput" onkeyup="filterFunction()">
 			<a href="#basic">Basic</a>
 			<a href="#non-coffee">Non-Coffee</a>
 			<a href="#coffee-mixed">Coffee Mixed</a>
