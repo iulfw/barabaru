@@ -3,7 +3,6 @@ var router = express.Router();
 
 var connection = require('../config/database');
 
-
 /* Read Main Website */
 
 router.get('/', function(req, res, next) {
@@ -25,8 +24,8 @@ router.get('/menus', function(req, res, next) {
   });
 });
 
-router.get('/feedback', function(req, res, next) {
-    res.render('feedback', { title: 'Feedback' });
+router.get('/404', function(req, res, next) {
+    res.render('404', { title: 'Error' });
 });
 
 module.exports = router;
