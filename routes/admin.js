@@ -29,11 +29,11 @@ router.get('/', function (req, res, next) {
     connection.query('SELECT * FROM menu ORDER BY id desc', function (err, rows) {
         if (err) {
             req.flash('error', err);
-            res.render('menu', {
+            res.render('admin', {
                 data: ''
             });
         } else {
-            res.render('menu/index', {
+            res.render('admin/index', {
                 data: rows
             });
         }
@@ -42,7 +42,7 @@ router.get('/', function (req, res, next) {
 
 // Create
 router.get('/create', function (req, res, next) {
-    res.render('menu/create', {
+    res.render('admin/create', {
         menu: {
             id: '',
             type: '',
@@ -67,7 +67,7 @@ router.post('/store', function (req, res, next) {
     if (id.length === 0) {
         errors = true;
         req.flash('error', "Please Enter an ID");
-        res.render('menu/create', {
+        res.render('admin/create', {
             id: id,
             type: type,
             pic: pic,
@@ -80,7 +80,7 @@ router.post('/store', function (req, res, next) {
     if (type.length === 0) {
         errors = true;
         req.flash('error', "Please Select a Type");
-        res.render('menu/create', {
+        res.render('admin/create', {
             id: id,
             type: type,
             pic: pic,
@@ -93,7 +93,7 @@ router.post('/store', function (req, res, next) {
     if (name.length === 0) {
         errors = true;
         req.flash('error', "Please Enter a Name");
-        res.render('menu/create', {
+        res.render('admin/create', {
             id: id,
             type: type,
             pic: pic,
@@ -106,7 +106,7 @@ router.post('/store', function (req, res, next) {
     if (price.length === 0) {
         errors = true;
         req.flash('error', "Please Enter a Price");
-        res.render('menu/create', {
+        res.render('admin/create', {
             id: id,
             type: type,
             pic: pic,
@@ -129,7 +129,7 @@ router.post('/store', function (req, res, next) {
         connection.query('INSERT INTO menu SET ?', formData, function (err, result) {
             if (err) {
                 req.flash('error', err)
-                res.render('menu/create', {
+                res.render('admin/create', {
                     id: formData.id,
                     type: formData.type,
                     pic: formData.pic,
@@ -139,7 +139,7 @@ router.post('/store', function (req, res, next) {
                 })
             } else {
                 req.flash('success', 'Menu Has Been Added');
-                res.redirect('/menu');
+                res.redirect('/admin');
             }
         })
     }
@@ -154,9 +154,9 @@ router.get('/edit/:id', function (req, res, next) {
 
         if (rows.length <= 0) {
             req.flash('error', 'Menu ID ' + id + " is Unavailable")
-            res.redirect('/menu')
+            res.redirect('/admin')
         } else {
-            res.render('menu/edit', {
+            res.render('admin/edit', {
                 id: rows[0].id,
                 type: rows[0].type,
                 pic: rows[0].pic,
@@ -181,7 +181,7 @@ router.post('/update/:id', function (req, res, next) {
     if (id.length === 0) {
         errors = true;
         req.flash('error', "Please Enter ID");
-        res.render('menu/edit', {
+        res.render('admin/edit', {
             id: id,
             type: type,
             pic: pic,
@@ -194,7 +194,7 @@ router.post('/update/:id', function (req, res, next) {
     if (type.length === 0) {
         errors = true;
         req.flash('error', "Please Enter Type");
-        res.render('menu/edit', {
+        res.render('admin/edit', {
             id: id,
             type: type,
             pic: pic,
@@ -207,7 +207,7 @@ router.post('/update/:id', function (req, res, next) {
     if (name.length === 0) {
         errors = true;
         req.flash('error', "Please Enter Name");
-        res.render('menu/edit', {
+        res.render('admin/edit', {
             id: id,
             type: type,
             pic: pic,
@@ -220,7 +220,7 @@ router.post('/update/:id', function (req, res, next) {
     if (price.length === 0) {
         errors = true;
         req.flash('error', "Please Enter Price");
-        res.render('menu/edit', {
+        res.render('admin/edit', {
             id: id,
             type: type,
             pic: pic,
@@ -243,7 +243,7 @@ router.post('/update/:id', function (req, res, next) {
         connection.query('UPDATE menu SET ? WHERE id = ?', [formData, id], function (err, result) {
             if (err) {
                 req.flash('error', err)
-                res.render('menu/edit', {
+                res.render('admin/edit', {
                     id: formData.id,
                     type: formData.type,
                     pic: formData.pic,
@@ -253,7 +253,7 @@ router.post('/update/:id', function (req, res, next) {
                 })
             } else {
                 req.flash('success', 'Menu Has Been Updated');
-                res.redirect('/menu');
+                res.redirect('/admin');
             }
         })
     }
@@ -266,10 +266,10 @@ router.get('/delete/:id', function (req, res, next) {
     connection.query('DELETE FROM menu WHERE id = ?', [id], function (err, result) {
         if (err) {
             req.flash('error', err)
-            res.redirect('/menu')
+            res.redirect('/admin')
         } else {
             req.flash('success', 'Menu Has Been Deleted')
-            res.redirect('/menu')
+            res.redirect('/admin')
         }
     })
 })

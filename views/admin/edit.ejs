@@ -4,7 +4,7 @@
 <head>
 
     <title>BARABIRU &nbsp|&nbsp Dashboard</title>
-    <link rel="icon" href="assets/favicon.png">
+    <link rel="icon" href="../assets/favicon.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -39,7 +39,7 @@
                 <% } %>
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="/menu/update/<%= id %>" method="post">
+                        <form action="/admin/update/<%= id %>" method="post">
                             <div class="form-group">
                                 <label>ID</label>
                                 <input type="text" class="form-control" name="id" value="<%= id %>">
@@ -87,4 +87,5 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </body>
+
 </html>

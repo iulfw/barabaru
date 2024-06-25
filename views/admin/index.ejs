@@ -93,7 +93,7 @@
             <div class="nav-btn">
                 <a id="hover" href="/" target="_blank">
                     <i class="fa fa-globe"></i>&nbsp&nbsp Website</a>
-                <a id="hoverr" href="/user">
+                <a id="hoverr" href="/login">
                     <i class="fa fa-sign-out"></i>&nbsp&nbsp Exit</a>
             </div>
         </div>
@@ -111,7 +111,7 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="menu/create" class="btn btn-md btn-success mb-3">Add Menu</a>
+                        <a href="admin/create" class="btn btn-md btn-success mb-3">Add Menu</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -136,8 +136,8 @@
                                             <td><%= data[i].price%></td>
                                             <td><%= data[i].descr%></td>
                                             <td class="text-center">
-                                                <a href="/menu/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">Edit</a>
-                                                <a onclick="return confirm('Are You Sure?')" href="/menu/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="/admin/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">Edit</a>
+                                                <a onclick="return confirm('Are You Sure?')" href="/admin/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     <% }
