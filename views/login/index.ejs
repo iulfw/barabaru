@@ -15,6 +15,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <style>
 
     * {
@@ -68,8 +70,19 @@
         color: #3068e1;
         transition: all 0.3s;
     }    
+
+    #error-message {
+        display: none;
+        color: #aa0000;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
     
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </head>
 
@@ -78,24 +91,50 @@
     <div class="container">
 
         <div class="logo">
-			<img src="assets/logo.png">
-		</div>
+            <img src="assets/logo.png">
+        </div>
 
-        <form action="/login" method="post">
-        <div class="form-group">
-            <input type="text" id="user" name="user" placeholder="Username" class="form-control">
-        </div>
-        <div class="form-group">
-            <input type="password" id="pass" name="pass" placeholder="Password" class="form-control">
-        </div>
-        <div class="form-group">
-            <input type="checkbox" id="remember">
-            <label for="remember" style="font-size: 14px">&nbsp Remember Me</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <div id="error-message">Invalid User or Pass</div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <input type="text" id="user" name="user" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" id="pass" name="pass" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="remember">
+                <label for="remember" style="font-size: 14px">&nbsp Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
 
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/login',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = '/admin';
+                        } else {
+                            $('#error-message').text('').hide();
+                        }
+                    },
+                    error: function(xhr) {
+                        var response = JSON.parse(xhr.responseText);
+                        $('#error-message').text(response.message).show();
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

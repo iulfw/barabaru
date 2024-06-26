@@ -13,17 +13,26 @@ router.post('/', (req, res) => {
     const pass = req.body.pass;
 
     // Database Query to Match User and Pass
-    connection.query(`SELECT * FROM user WHERE user =? AND pass =?`, [user, pass], (err, results) => {
+    connection.query('SELECT * FROM user WHERE user = ? AND pass = ?', [user, pass], (err, results) => {
         if (err) {
-        console.error(err);
-        res.status(500).send('Error Logging In');
+            console.error(err);
+            res.status(500).json({ success: false, message: 'Error Logging In' });
         } else if (results.length > 0) {
-        // Login Redirect
-        req.session.isLoggedIn = true;
-        res.redirect('/admin');
+            req.session.isLoggedIn = true;
+            res.json({ success: true });
         } else {
-        res.status(401).send('Invalid User or Pass');
+            res.status(401).json({ success: false, message: 'Invalid User or Pass' });
         }
+    });
+});
+
+// Logout Route
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return console.error(err);
+        }
+        res.redirect('/login');
     });
 });
 

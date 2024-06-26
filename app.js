@@ -32,11 +32,18 @@ app.use(session({
     secret: 'secret'
 }))
 
-app.use(flash())
+app.use(flash());
+
+function isAuthenticated(req, res, next) {
+    if (req.session.isLoggedIn) {
+        return next();
+    }
+    res.redirect('/login');
+}
 
 app.use('/', mainRouter);
 app.use('/login', userRouter);
-app.use('/admin', menuRouter);
+app.use('/admin', isAuthenticated, menuRouter);
 
 // Catch 404 and Forward to Error Handler
 app.use(function(req, res, next) {
