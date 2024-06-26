@@ -25,6 +25,24 @@
         background: #fdfdfd;
     }
 
+    .form-btn {
+        padding-top: 20px;
+    }
+
+    .btn {
+        font-weight: 600;
+        padding: 5px 25px;
+        border: none;
+    }
+
+    .btn-primary {
+        background: #3068e1;
+    }
+
+    .btn-primary:hover {
+        background: #427af6;
+    }
+    
     </style>
 
 </head>
@@ -74,8 +92,10 @@
                                 <label>Description</label>
                                 <input type="text" class="form-control" name="descr">
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="reset" class="btn btn-warning">Clear</button>
+                            <div class="form-btn">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="reset" class="btn btn-warning">Clear</button>
+                            </div>
                         </form>
                     </div>
                 </div>

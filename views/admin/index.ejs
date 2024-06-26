@@ -38,6 +38,7 @@
     .nav h1 {
         font-size: 48px;
         text-align: center;
+        font-weight: 500;
     }
 
     #user {
@@ -79,6 +80,28 @@
         transition: all 0.3s;
     }
 
+    .btn {
+        font-weight: 600;
+        padding: 5px 25px;
+        border: none;
+    }
+
+    .mb-3 {
+        background: #2e7d32;
+    }
+
+    .btn-primary {
+        background: #3068e1;
+    }
+
+    .btn-primary:hover {
+        background: #427af6;
+    }
+
+    .btn-danger {
+        background: #aa0000;
+    }
+
     </style>
 
 </head>
@@ -111,7 +134,8 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="admin/create" class="btn btn-md btn-success mb-3">Add Menu</a>
+                        <a href="admin/create" class="btn btn-md btn-success mb-3">
+                            <i class="fa fa-plus-circle"></i>&nbsp&nbsp Add Menu</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -136,8 +160,11 @@
                                             <td><%= data[i].price%></td>
                                             <td><%= data[i].descr%></td>
                                             <td class="text-center">
-                                                <a href="/admin/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">Edit</a>
-                                                <a onclick="return confirm('Are You Sure?')" href="/admin/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="/admin/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">
+                                                    <i class="fa fa-pencil-square-o"></i></a>
+                                                </a>
+                                                <a onclick="return confirm('Are You Sure?')" href="/admin/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">
+                                                    <i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <% }
