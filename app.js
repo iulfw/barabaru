@@ -26,9 +26,9 @@ app.use(session({
     cookie: { 
         maxAge: 60000 
     },
-    store: new session.MemoryStore,
+    store: new session.MemoryStore(),
     saveUninitialized: true,
-    resave: 'true',
+    resave: true,
     secret: 'secret'
 }))
 

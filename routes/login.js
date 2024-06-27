@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
             res.status(500).json({ success: false, message: 'Error Logging In' });
         } else if (results.length > 0) {
             req.session.isLoggedIn = true;
+            req.session.userName = results[0].name;
             res.json({ success: true });
         } else {
             res.status(401).json({ success: false, message: 'Invalid User or Pass' });

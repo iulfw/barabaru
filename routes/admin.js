@@ -26,15 +26,24 @@ var upload = multer({
 
 // Index
 router.get('/', function (req, res, next) {
+
+    if (!req.session.isLoggedIn) {
+        res.redirect('/login');
+        return;
+    }
+    const userName = req.session.userName;
+
     connection.query('SELECT * FROM menu ORDER BY id desc', function (err, rows) {
         if (err) {
             req.flash('error', err);
             res.render('admin', {
-                data: ''
+                data: '',
+                userName: userName
             });
         } else {
             res.render('admin/index', {
-                data: rows
+                data: rows,
+                userName: userName
             });
         }
     });
@@ -171,6 +180,7 @@ router.get('/edit/:id', function (req, res, next) {
 // Update
 router.post('/update/:id', function (req, res, next) {
     let id = req.params.id;
+    let new_id = req.body.id;
     let type = req.body.type;
     let pic = req.body.pic;
     let name = req.body.name;
@@ -178,11 +188,11 @@ router.post('/update/:id', function (req, res, next) {
     let descr = req.body.descr;
     let errors = false;
 
-    if (id.length === 0) {
+    if (new_id.length === 0) {
         errors = true;
         req.flash('error', "Please Enter ID");
         res.render('admin/edit', {
-            id: id,
+            id: new_id,
             type: type,
             pic: pic,
             name: name,
@@ -195,7 +205,7 @@ router.post('/update/:id', function (req, res, next) {
         errors = true;
         req.flash('error', "Please Enter Type");
         res.render('admin/edit', {
-            id: id,
+            id: new_id,
             type: type,
             pic: pic,
             name: name,
@@ -208,7 +218,7 @@ router.post('/update/:id', function (req, res, next) {
         errors = true;
         req.flash('error', "Please Enter Name");
         res.render('admin/edit', {
-            id: id,
+            id: new_id,
             type: type,
             pic: pic,
             name: name,
@@ -221,7 +231,7 @@ router.post('/update/:id', function (req, res, next) {
         errors = true;
         req.flash('error', "Please Enter Price");
         res.render('admin/edit', {
-            id: id,
+            id: new_id,
             type: type,
             pic: pic,
             name: name,
@@ -232,7 +242,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (!errors) {
         let formData = {
-            id: id,
+            id: new_id,
             type: type,
             pic: pic,
             name: name,
