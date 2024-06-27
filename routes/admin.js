@@ -8,7 +8,7 @@ var connection = require('../config/database');
 // Set Storage Engine
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, './public/assets/menu');
+        cb(null, '/assets/menu');
     },
     filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
