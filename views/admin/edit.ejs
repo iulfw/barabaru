@@ -57,7 +57,7 @@
                 <% } %>
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="/admin/update/<%= id %>" method="post">
+                        <form action="/admin/update/<%= id %>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>ID</label>
                                 <input type="text" class="form-control" name="id" value="<%= id %>">
@@ -77,8 +77,9 @@
                             </div>
                             <div class="form-group">
                                 <label>Pic</label>
+                                <div style="margin: 10px 0 20px;"><img src="<%= pic %>" alt="<%= pic %>" style="width: 100px;"></div>
                                 <input type="file" class="form-control" name="pic">
-                                <img src="/assets/menu/<%= pic %>" style="width: 120px;">
+                                <input type="hidden" name="old_pic" value="<%= pic %>">
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
